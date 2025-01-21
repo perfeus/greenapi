@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+        <title>Green API</title>
+    </head>
+    <body>
+
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light font-weight-bold mb-5">
+            <a class="navbar-brand text-success" href="#">
+            <img src="/static/images/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Green-API
+            </a>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <!-- First form -->
+                    <form action="/" method="post">
+                        <div class="row">
+                            <div class="form-group m-3">
+                                <input type="text" name="idInstance" class="form-control form-control-lg border-success" id="idInstanceInput" placeholder="idInstance" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group m-3">
+                                <input type="text" name="apiTokenInstance" class="form-control form-control-lg border-success" id="apiTokenInstanceInput" placeholder="apiTokenInstance" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" name="action" value="getSettings" class="btn btn-outline-success btn-lg btn-block m-3">getSettings</button>
+                        </div>
+                        <div class="row">
+                            <button type="submit" name="action" value="getStateInstance" class="btn btn-outline-success btn-lg btn-block m-3">getStateInstance</button>
+                        </div>
+                    </form>
+                    <!-- Second form -->
+                    <form action="/" method="post">
+                        <div class="row">
+                            <div class="form-group m-3">
+                                <input type="text" name="idInstance" class="form-control form-control-lg border-success" id="idInstanceInput" placeholder="idInstance" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group m-3">
+                                <input type="text" name="message" class="form-control form-control-lg border-success" id="messageInput" placeholder="message" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" name="action" value="sendMessage" class="btn btn-outline-success btn-lg btn-block m-3">sendMessage</button>
+                        </div>
+                    </form>
+                    <!-- Third form -->
+                    <form action="/" method="post">
+                        <div class="row">
+                            <div class="form-group m-3">
+                                <input type="text" name="phone" class="form-control form-control-lg border-success" id="phoneInput" placeholder="phone" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group m-3">
+                                <input type="text" name="urlFile" class="form-control form-control-lg border-success" id="urlFileInput" placeholder="urlFile" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" name="action" value="sendFileByUrl" class="btn btn-outline-success btn-lg btn-block m-3">sendFileByUrl</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-5 bg-light rounded-lg border border-success m-3">
+                    <p class="text-success text-monospace">Answer:</p>
+                    {% if data %}
+                        <pre>{{ data | tojson(indent=2) }}</pre>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    </body>
+</html>
