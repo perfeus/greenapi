@@ -39,13 +39,17 @@ python main.py
 ```
 
 ## Project Structure
+```bash
 green_api/
 ├── main.py           # Main Flask application
 ├── static/           # Static files (CSS, JS)
+│   └── images/       # Image assets
 ├── templates/        # HTML templates
+│   └── index.html    # Main interface
 ├── requirements.txt  # Python dependencies
-└── Procfile          # Heroku deployment
-└── README.md         # Documentation
+├── Procfile         # Heroku deployment configuration
+└── README.md        # Project documentation
+```
 
 ## API Endpoints
 - POST /sendMessage - Send WhatsApp message
@@ -63,5 +67,5 @@ green_api/
 ## License
 MIT License
 
-Author
+## Author
 Aleksei Izmalkin
